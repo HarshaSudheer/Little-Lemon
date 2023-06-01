@@ -19,7 +19,7 @@ const Testimonials = () => {
         }
     ]
     return(
-        <article>
+        <article className="testimonials-container">
             <h2>Testimonials</h2>
             {data.map((item) => {
                 return(

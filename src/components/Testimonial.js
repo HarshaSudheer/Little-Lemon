@@ -2,10 +2,10 @@
 
 const Testimonial = (props) => {
     return(
-        <article>
+        <article className="testimonial-container">
             <h5>Rating</h5>
             <img src={require(`../assets/${props.image_name}.png`)} alt="Testimonial"/>
-            <p>{props.name}</p>
+            <p className="para">{props.name}</p>
         </article>
     )
 }

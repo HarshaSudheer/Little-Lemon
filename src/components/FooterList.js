@@ -3,9 +3,10 @@
 const FooterList = (props) => {
     return(
         <ul>
+            <h5>{props.name}</h5>
             {props.list.map((item) => {
                 return(
-                    <li><a href="#link">{item}</a></li>
+                    <li><a className="footer-link" href="#link">{item}</a></li>
                 )
             })}
         </ul>

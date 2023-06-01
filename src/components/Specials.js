@@ -25,8 +25,9 @@ const Specials = () => {
         }
     ]
     return(
-        <article>
+        <article className="specials-container">
             <h2>Specials</h2>
+            <button>Online Menu</button>
             {
                 data.map((item) => {
                     return(
