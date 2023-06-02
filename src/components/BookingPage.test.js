@@ -1,6 +1,12 @@
 import { render, screen, fireEvent } from "@testing-library/react"
 import BookingPage from './BookingPage'
 
+const mockedUsedNavigate = jest.fn();
+jest.mock('react-router-dom', () => ({
+   ...jest.requireActual('react-router-dom'),
+  useNavigate: () => mockedUsedNavigate,
+}));
+
 test('Renders the BookingForm heading', () => {
     render(<BookingPage />)
     const headingElement = screen.getByText("Reserve a table")

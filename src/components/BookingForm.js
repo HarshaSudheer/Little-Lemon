@@ -9,7 +9,7 @@ const BookingForm = (props) => {
     return (
         <>
             <h2>Reserve a table</h2>
-            <form style={{ display: "grid", maxWidth: "200px", gap: "20px" }}>
+            <form style={{ display: "grid", maxWidth: "200px", gap: "20px" }} onSubmit={props.submitForm}>
                 <label htmlFor="res-date">Choose date</label>
                 <input type="date" id="res-date" name="date" value={props.data.date} onChange={handleDateChange} />
                 <label htmlFor="res-time">Choose time</label>
@@ -27,7 +27,7 @@ const BookingForm = (props) => {
                     <option>Birthday</option>
                     <option>Anniversary</option>
                 </select>
-                <input type="submit" value="Make Your reservation" />
+                <input data-testid="submit-btn" type="submit" value="Make Your reservation"/>
             </form>
         </>
     )

@@ -1,6 +1,5 @@
 export const fetchAPI = (date) => {
     let times = [];
-    console.log(date.getDay())
     if(date.getDay() % 2 === 0){
         times = [
             {
@@ -59,4 +58,8 @@ export const fetchAPI = (date) => {
     }
 
     return(times)
+}
+
+export const submitAPI = (data) => {
+    console.log(data)
 }
