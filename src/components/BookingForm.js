@@ -14,7 +14,7 @@ const BookingForm = (props) => {
                 <input type="date" id="res-date" name="date" value={props.data.date} onChange={handleDateChange} />
                 <label htmlFor="res-time">Choose time</label>
                 <select id="res-time"  name="time" value={props.data.time} onChange={props.handleChange}>
-                    {props.availableTimes.map((availableTime) => {
+                    {props.availableTimes && props.availableTimes.map((availableTime) => {
                         return (
                             <option data-testid="res-time-option" key={availableTime.id}>{availableTime.time}</option>
                         )
