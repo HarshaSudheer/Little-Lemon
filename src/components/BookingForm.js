@@ -13,10 +13,10 @@ const BookingForm = (props) => {
                 <label htmlFor="res-date">Choose date</label>
                 <input type="date" id="res-date" name="date" value={props.data.date} onChange={handleDateChange} />
                 <label htmlFor="res-time">Choose time</label>
-                <select id="res-time" data-testid="res-time" name="time" value={props.data.time} onChange={props.handleChange}>
-                    {props.availableTimes.length > 0 && props.availableTimes.map((availableTime) => {
+                <select id="res-time"  name="time" value={props.data.time} onChange={props.handleChange}>
+                    {props.availableTimes.map((availableTime) => {
                         return (
-                            <option key={availableTime.id}>{availableTime.time}</option>
+                            <option data-testid="res-time-option" key={availableTime.id}>{availableTime.time}</option>
                         )
                     })}
                 </select>
@@ -28,7 +28,6 @@ const BookingForm = (props) => {
                     <option>Anniversary</option>
                 </select>
                 <input type="submit" value="Make Your reservation" />
-                {console.log(props.data)}
             </form>
         </>
     )

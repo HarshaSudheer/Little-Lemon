@@ -15,7 +15,7 @@ const BookingPage = () => {
         }
     );
 
-    const initializeTimes = async () => {
+    const initializeTimes = () => {
         return (
             [
                 {
@@ -46,7 +46,7 @@ const BookingPage = () => {
         )
     }
 
-    const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes)
+    const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes())
 
     function handleChange(e) {
         setData(prevData => {
