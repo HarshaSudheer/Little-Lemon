@@ -283,6 +283,10 @@ h5 {
     padding: 60px 80px 80px 60px;
   }
 
+  .specials-container>h2 {
+    grid-column: 1/ span 1;
+  }
+
   .specials-container>button {
     justify-self: unset;
   }

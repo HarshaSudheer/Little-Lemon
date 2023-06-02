@@ -4,9 +4,9 @@ const FooterList = (props) => {
     return(
         <ul>
             <h5>{props.name}</h5>
-            {props.list.map((item) => {
+            {props.list.map((item, index) => {
                 return(
-                    <li><a className="footer-link" href="#link">{item}</a></li>
+                    <li key={index}><a className="footer-link" href="#link">{item}</a></li>
                 )
             })}
         </ul>
