@@ -1,4 +1,4 @@
-import { useState, useReducer } from "react"
+import { useState, useReducer, useEffect } from "react"
 import { fetchAPI, submitAPI } from "../utils/api"
 import { useNavigate } from "react-router-dom"
 import BookingForm from "./BookingForm"
@@ -10,20 +10,38 @@ const updateTimes = (state, action) => {
 
 const BookingPage = () => {
     const navigate = useNavigate();
-    const [data, setData] = useState(
-        {
-            date: "",
-            time: "",
-            number: "1",
-            occasion: ""
-        }
-    );
 
     const initializeTimes = () => {
         return (fetchAPI(new Date()))
     }
 
     const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes())
+
+    const [data, setData] = useState(
+        {
+            date: "",
+            time: "",
+            number: 0,
+            occasion: ""
+        }
+    );
+
+    const [isSubmitDisabled, setIsSubmitDisabled] = useState(true)
+
+
+    const validateInputs = () => {
+        if(new Date(`${data.date}T${data.time}:00`) >= new Date() && parseInt(data.number) > 0 && data.occasion !== ""){
+            setIsSubmitDisabled(false)
+        }
+        else{
+            setIsSubmitDisabled(true)
+        }
+    }
+
+    useEffect(() => {
+        validateInputs()
+         // eslint-disable-next-line
+    },[data])
 
     const handleChange = (e) => {
         setData(prevData => {
@@ -42,7 +60,7 @@ const BookingPage = () => {
     }
 
     return (
-        <BookingForm data={data} availableTimes={availableTimes} handleChange={handleChange} dispatch={dispatch} submitForm={submitForm}/>
+        <BookingForm data={data} availableTimes={availableTimes} handleChange={handleChange} dispatch={dispatch} isSubmitDisabled={isSubmitDisabled} submitForm={submitForm}/>
     )
 }
 
