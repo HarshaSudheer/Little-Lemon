@@ -349,3 +349,43 @@ h5 {
     padding: 20px 80px 20px 80px;
   }
 }
+
+.reserve-form{
+  margin-top: 20px;
+  display: grid;
+  justify-content: center;
+}
+
+form{
+  margin-top: 20px;
+  display: grid;
+  min-width: 500px;
+  gap: 12px;
+}
+
+input[type = submit]{
+  margin-top: 20px;
+  background: #F4CE14;
+  border: none;
+  padding: 10px;
+  border-radius: 16px;
+  font-family: 'Karla';
+  font-weight: 500;
+  font-size: 18px;
+  color: black;
+}
+
+input[type = submit]:disabled{
+  background: #EDEFEE;
+}
+
+#confirm-msg{
+  font-family: 'Markazi Text';
+  font-weight: 500;
+  font-size: 44px;
+  color: #495E57;
+  padding-top: 20px;
+  margin-top: 20px;
+  display: grid;
+  justify-content: center;
+}

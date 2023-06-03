@@ -1,7 +1,7 @@
 
 const ConfirmedBooking = () => {
     return(
-        <h3>Your booking has been confirmed</h3>
+        <h2 id="confirm-msg">Your booking has been confirmed!</h2>
     )
 }
 
