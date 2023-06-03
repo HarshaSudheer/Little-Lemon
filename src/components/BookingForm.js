@@ -29,7 +29,7 @@ const BookingForm = (props) => {
                     <option>Birthday</option>
                     <option>Anniversary</option>
                 </select>
-                <input data-testid="submit-btn" type="submit" disabled={props.isSubmitDisabled} value="Make Your reservation"/>
+                <input data-testid="submit-btn" type="submit" disabled={props.isSubmitDisabled} value="Make Your reservation" aria-label="On Click"/>
             </form>
         </>
     )
