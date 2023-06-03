@@ -11,9 +11,9 @@ const BookingForm = (props) => {
             <h2>Reserve a table</h2>
             <form style={{ display: "grid", maxWidth: "200px", gap: "20px" }} onSubmit={props.submitForm}>
                 <label htmlFor="res-date">Choose date</label>
-                <input type="date" id="res-date" name="date" value={props.data.date} onChange={handleDateChange} />
+                <input type="date" data-testid="date-input" id="res-date" name="date" value={props.data.date} onChange={handleDateChange} />
                 <label htmlFor="res-time">Choose time</label>
-                <select id="res-time"  name="time" value={props.data.time} onChange={props.handleChange}>
+                <select data-testid="time-input" id="res-time"  name="time" value={props.data.time} onChange={props.handleChange}>
                     <option>Select an time</option>
                     {props.availableTimes && props.availableTimes.map((availableTime) => {
                         return (
@@ -22,9 +22,9 @@ const BookingForm = (props) => {
                     })}
                 </select>
                 <label htmlFor="guests">Number of guests</label>
-                <input type="number" name="number" min="1" max="10" id="guests" value={props.data.number} onChange={props.handleChange} />
+                <input type="number" data-testid="number-input" name="number" min="1" max="10" id="guests" value={props.data.number} onChange={props.handleChange} />
                 <label htmlFor="occasion">Occasion</label>
-                <select id="occasion" name="occasion" value={props.data.occasion} onChange={props.handleChange}>
+                <select data-testid="occasion-input" id="occasion" name="occasion" value={props.data.occasion} onChange={props.handleChange}>
                     <option>Select an occasion</option>
                     <option>Birthday</option>
                     <option>Anniversary</option>

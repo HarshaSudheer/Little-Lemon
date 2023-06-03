@@ -30,7 +30,7 @@ const BookingPage = () => {
 
 
     const validateInputs = () => {
-        if(new Date(`${data.date}T${data.time}:00`) >= new Date() && parseInt(data.number) > 0 && data.occasion !== ""){
+        if(parseInt(data.number) > 0 && data.occasion !== ""){
             setIsSubmitDisabled(false)
         }
         else{
